@@ -75,3 +75,37 @@ if (typeof notSure === 'string') {
 } else if (typeof notSure === 'boolean') {
   console.log(notSure.valueOf());
 }
+
+
+
+// challenge #02
+
+let discount: number | string = 10;
+discount = '20%'
+
+//discout = true; // Error: Type 'true' is not assignable to type 'number | string'
+
+
+let orderStatus: 'processing' | 'shipped' | 'delivered' = 'processing';
+
+// orderStatus = 'cancelled'; // Error: Type '"cancelled"' is not assignable to type '"processing" | "shipped" | "delivered"'
+
+
+
+let prices: number[] = [10, 20, 30, 40, 50];
+// prices.push('hello'); // Error: Argument of type '"hello"' is not assignable to parameter of type 'number'
+
+let fruit: string[] = ['apple', 'banana', 'mango', 'orange'];
+
+// fruit.push(10); // Error: Argument of type '10' is not assignable to parameter of type 'string'
+
+let names = ['Mohammed', 'Aliy', 'Bashir', 1];
+
+
+let array: (number | string | boolean)[] = [10, 'hello', true];
+
+// challenge #03
+
+let tempratures: number[] = [10, 20, 30, 40, 50];
+
+let colors: string[] = ['red', 'green', 'blue', 'yellow'];
