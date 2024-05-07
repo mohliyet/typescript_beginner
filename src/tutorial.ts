@@ -45,4 +45,33 @@ amIEligible =true // logical operation is performed on the variable amIEligible.
 let myNumber: number = 10;
 
 // Example of Type Inference
-let myString = "Hello, TypeScript!";
+let myString= "Hello, TypeScript!";
+
+
+
+// advanced concepts about varibles- union types, type aliases, type assertions, and type guards
+
+let tax: number | string | boolean = 10;
+
+tax = 100; // tax is now a number;
+tax = '100$' // tax is now a string;
+tax = true; // tax is now a boolean;
+
+// type aliases
+
+let requestStatus: 'success' | 'error' | 'pending' = 'success'; // requestStatus can only be 'success', 'error', or 'pending'
+requestStatus= 'error'; // requestStatus is now 'error'
+
+// type assertions
+let notSure: any = 'Hello, TypeScript!';
+notSure = 10;
+notSure = true;
+
+// type guards
+if (typeof notSure === 'string') {
+  console.log(notSure.toLocaleUpperCase());
+} else if (typeof notSure === 'number') {
+  console.log(notSure.toFixed(2));
+} else if (typeof notSure === 'boolean') {
+  console.log(notSure.valueOf());
+}
