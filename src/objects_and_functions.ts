@@ -96,3 +96,33 @@ if (checkName(nameTOCheck)){
 }else{ 
     console.log(`${nameTOCheck} is not in the array`);
 }
+
+
+// Optional parameters and default values in functions:
+// In TypeScript, function parameters can be made optional by appending a question mark (?) to the parameter name. 
+// For example, in a function `greet(name?: string)`, the `name` parameter is optional.
+// If an argument for `name` is not provided when the function is called, its value will be `undefined`.
+// 
+// Default parameter values can be assigned to function parameters. 
+// They are used when the function is called without providing a value for that parameter.
+// For example, in a function `greet(name = 'Guest')`, if `name` is not provided when calling the function, 
+// it will default to 'Guest'.
+//
+// In the function `calculatePrice(price: number, discount: number)`, both `price` and `discount` are required parameters.
+// If we want to make `discount` optional and provide a default value, we could rewrite the function as:
+// `calculatePrice(price: number, discount: number = 0)`.
+// Now, if `calculatePrice` is called without a `discount` argument, `discount` will default to `0`, 
+// and the function will return the original `price`.
+
+// Optional parameters and default values in functions
+
+function calculatePrice(price: number, discount?: number): number {
+    // If discount is not provided, it defaults to 0
+    discount = discount ?? 0;
+    return price - discount;
+}
+
+// Usage examples:
+console.log(calculatePrice(100, 20)); // Output: 80
+console.log(calculatePrice(100)); // Output: 100, because discount defaults to 0
+ 
