@@ -201,3 +201,22 @@ function processInput(input: string | number): void {
         console.log(input.toFixed(2));
     }
 }
+
+// The function 'createEmployee' demonstrates the use of object destructuring and object literal shorthand syntax in TypeScript.
+// It accepts an object with a property 'id' as a parameter and destructures 'id' from the object in the function signature.
+// The function returns an object with properties 'id' and 'isActive'. 
+// 'id' is the same as the 'id' passed into the function, and 'isActive' is a boolean that is true if 'id' is even and false if 'id' is odd.
+// This is determined by the expression 'id % 2 === 0', which checks if 'id' is divisible by 2.
+
+function createEmployee({id}: {id: number}):{
+    id: number;
+    isActive: boolean
+}{
+    return {id, isActive: id%2===0};
+}
+
+// The function is then called with two different 'id' values, 1 and 2, and the returned objects are stored in 'first' and 'second'.
+// These objects are then logged to the console.
+const first = createEmployee({id: 1});
+const second = createEmployee({id: 2});
+console.log(first, second);
