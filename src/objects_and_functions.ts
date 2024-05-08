@@ -220,3 +220,17 @@ function createEmployee({id}: {id: number}):{
 const first = createEmployee({id: 1});
 const second = createEmployee({id: 2});
 console.log(first, second);
+
+//alternative 
+
+function createStudent(student: {id: number, name:string}):void{
+    console.log(`Welcome to the course ${student.name.toUpperCase()}!`);
+}
+
+const newStudent = {
+    id: 5,
+    name: 'Mohammed'
+};
+
+createStudent(newStudent);
+createStudent({id: 6, name: 'Aliy'});
