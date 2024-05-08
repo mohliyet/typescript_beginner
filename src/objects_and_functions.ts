@@ -186,3 +186,12 @@ function logMessage(message: string): void {
 // After the function definition, 'logMessage' is called with the argument 'Hello, TypeScript!', 
 // so 'Hello, TypeScript!' will be printed to the console.
 logMessage('Hello, TypeScript!');
+
+// Functions with unknown return types as function parameters
+function processInput(input: string | number){
+    if(typeof input === 'string'){
+        console.log(input.toUpperCase());
+    } else if (typeof input === 'number') {
+        console.log(input.toFixed(2));
+    }
+}
