@@ -229,8 +229,39 @@ function createStudent(student: {id: number, name:string}):void{
 
 const newStudent = {
     id: 5,
-    name: 'Mohammed'
+    name: 'Mohammed',
 };
 
 createStudent(newStudent);
 createStudent({id: 6, name: 'Aliy'});
+
+
+// Challenge #06
+
+// The function 'processData' accepts two parameters:
+// - 'input': a union type that can be either a string or a number 
+// - 'config': an object with an optional 'reverse' property of type boolean. By default, 'reverse' is false.
+// The function behaves as follows:
+// - If 'input' is a number, the function returns the square of the number.
+// - If 'input' is a string and 'reverse' is true, the function returns the reversed string in uppercase.
+// - If 'input' is a string and 'reverse' is not true, the function returns the string in uppercase.
+
+function processData(input: string | number, config: {reverse?: boolean} = {reverse: false}): string | number {
+    if(typeof input === 'number'){
+        return input * input;
+    } else{
+        return config.reverse? input.toUpperCase().split('').reverse().join('') : input.toUpperCase();
+    }
+}
+
+// Test 1: Pass a number as input
+let result1 = processData(5);
+console.log(result1); // Expected output: 25
+
+// Test 2: Pass a string as input with reverse set to true
+let result2 = processData("hello", {reverse: true});
+console.log(result2); // Expected output: "OLLEH"
+
+// Test 3: Pass a string as input with reverse set to false
+let result3 = processData("world", {reverse: false});
+console.log(result3); // Expected output: "WORLD"
