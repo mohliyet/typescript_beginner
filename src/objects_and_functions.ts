@@ -125,4 +125,13 @@ function calculatePrice(price: number, discount?: number): number {
 // Usage examples:
 console.log(calculatePrice(100, 20)); // Output: 80
 console.log(calculatePrice(100)); // Output: 100, because discount defaults to 0
+
+// personal challenge 
+
+function calculateScore(intialScore: number, penaltyPoints?: number): number{
+    penaltyPoints = penaltyPoints ?? 0;
+    return intialScore - penaltyPoints;
+}
  
+let scoreAfterPenalty = calculateScore(100, 10);
+let scoreWithoutPenalty = calculateScore(100);
