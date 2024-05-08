@@ -74,3 +74,19 @@ someValue.myMethod();
 // This error occurs because 'myMethod()' does not exist on the number type.
 // But TypeScript didn't catch this error when we called 'addThree(2)',
 // because it can't check properties or methods on variables of type 'any'.
+
+
+//challenge #05
+// create a new array of names 
+
+names = ['Alice', 'Bob', 'Eve'];
+
+//write a function that checks if a name is in your array. this function should take a name as a paramter and return a boolean. Please leave this one for me to solve it, right now I am working on the next section.
+
+function checkName(name: string): boolean{
+    return names.includes(name);
+}
+
+// use this function to check if various names are in your array and log the results.
+
+console.log(checkName('Alice')); // true
