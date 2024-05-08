@@ -54,3 +54,23 @@ function calculateDiscount2(price: number): number{
     }
     return price * 0.90; 
 }
+
+
+function addThree(number: any){
+    let anotherNumber: number = 3;
+    return number + anotherNumber;
+} 
+// The return type is any - inferred from the return value.
+// Using 'any' type is not safe because it turns off TypeScript checks.
+// Here, we're adding a number to 'number', so the function returns a number.
+// But TypeScript doesn't enforce this because 'number' is of type 'any'.
+// This can lead to errors, like when we try to call 'myMethod()' on the result.
+
+const result = addThree(2);
+const someValue = result;
+
+someValue.myMethod(); 
+// Error: Property 'myMethod' does not exist on type 'number'.
+// This error occurs because 'myMethod()' does not exist on the number type.
+// But TypeScript didn't catch this error when we called 'addThree(2)',
+// because it can't check properties or methods on variables of type 'any'.
