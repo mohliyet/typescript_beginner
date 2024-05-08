@@ -69,7 +69,7 @@ function addThree(number: any){
 const result = addThree(2);
 const someValue = result;
 
-someValue.myMethod(); 
+// someValue.myMethod(); 
 // Error: Property 'myMethod' does not exist on type 'number'.
 // This error occurs because 'myMethod()' does not exist on the number type.
 // But TypeScript didn't catch this error when we called 'addThree(2)',
@@ -144,3 +144,32 @@ function calculatePrice2(price: number, discount?: number): number{
 let finalPrice2 = calculatePrice2(100, 20);
 let finalPrice3 = calculatePrice2(100);
 
+
+
+// Define a function 'sum' that takes a string 'message' and a variable number of 'numbers' as arguments.
+// The '...numbers' syntax is known as rest parameters in TypeScript and JavaScript, 
+// which allows you to pass an arbitrary number of arguments to the function.
+function sum(message: string, ...numbers: number[]): string {
+    // Use the 'map' function to create a new array 'doubled' where each number is multiplied by 2.
+    // This array is then logged to the console.
+    const doubled = numbers.map((num) => num * 2);
+    console.log(doubled);
+
+    // Use the 'reduce' function to calculate the total sum of the numbers.
+    // The 'reduce' function takes a callback function and an initial value (0 in this case) as arguments.
+    // The callback function is called for each number in the array, with 'previous' being the accumulated value 
+    // and 'current' being the current number. The callback adds 'previous' and 'current' together and returns the result, 
+    // which becomes the new accumulated value for the next call. After all numbers have been processed, 'reduce' returns the total sum.
+    let total = numbers.reduce((previous, current) => {
+        return previous + current;
+    }, 0);
+
+    // The function returns a string that combines the 'message' and the total sum.
+    return `${message} ${total}`;
+}
+
+// Call the function with the arguments 'The sum is:', 1, 2, 3, 4, 5. 
+// The result is stored in the variable 'result' and logged to the console. 
+// The output will be 'The sum is: 15', because 1 + 2 + 3 + 4 + 5 equals 15.
+let result0 = sum('The sum is:', 1, 2, 3, 4, 5);
+console.log(result0);
