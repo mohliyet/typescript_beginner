@@ -32,6 +32,25 @@ let products: {title: string; cost?: number}[] = [product1, product2];
 function sayHi(name:string){
     console.log(`Hello ${name.toUpperCase()}!`)
 }
-
 //options - set to any , configure tsconfig.json to allow implicit any and type annotation
 sayHi('Mohammed')
+
+
+function calculateDiscount(price: number){
+    return price * 0.90;
+} // return type is inferred
+
+
+
+const finalPrice = calculateDiscount(100);
+
+// assigning a type for the return value
+
+function calculateDiscount2(price: number): number{
+    const hasDiscount = true;
+    if(hasDiscount){
+        return price;
+        // return "discount applied!" // Error: Type 'string' is not assignable to type 'number'
+    }
+    return price * 0.90; 
+}
