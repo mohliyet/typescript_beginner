@@ -173,3 +173,16 @@ function sum(message: string, ...numbers: number[]): string {
 // The output will be 'The sum is: 15', because 1 + 2 + 3 + 4 + 5 equals 15.
 let result0 = sum('The sum is:', 1, 2, 3, 4, 5);
 console.log(result0);
+
+// The function 'logMessage' is a simple TypeScript function that takes a single parameter: a string named 'message'. 
+// The function's return type is 'void', which means it doesn't return a value. In TypeScript, 'void' is a subtype of 'undefined' 
+// that is used to represent the absence of a value, typically the return value of functions that do not return anything.
+// Inside the function, it uses 'console.log' to print the 'message' parameter to the console. 
+
+function logMessage(message: string): void {
+    console.log(message);
+}
+
+// After the function definition, 'logMessage' is called with the argument 'Hello, TypeScript!', 
+// so 'Hello, TypeScript!' will be printed to the console.
+logMessage('Hello, TypeScript!');
