@@ -25,3 +25,13 @@ let products: {title: string; cost?: number}[] = [product1, product2];
 
 // products.push({title: 'shoes', cost: '30'}); // Error: Argument of type '{title: string; cost: string;}' is not assignable to parameter of type '{title: string; cost?: number;}'
 
+// day 2 - working with functions
+
+// Path: typescript/src/objects_and_functions.ts
+
+function sayHi(name:string){
+    console.log(`Hello ${name.toUpperCase()}!`)
+}
+
+//options - set to any , configure tsconfig.json to allow implicit any and type annotation
+sayHi('Mohammed')
