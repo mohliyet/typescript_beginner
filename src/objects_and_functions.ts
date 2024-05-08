@@ -126,12 +126,21 @@ function calculatePrice(price: number, discount?: number): number {
 console.log(calculatePrice(100, 20)); // Output: 80
 console.log(calculatePrice(100)); // Output: 100, because discount defaults to 0
 
-// personal challenge 
+// additional example
 
-function calculateScore(intialScore: number, penaltyPoints?: number): number{
-    penaltyPoints = penaltyPoints ?? 0;
+function calculateScore(intialScore: number, penaltyPoints: number=0): number{
     return intialScore - penaltyPoints;
 }
  
 let scoreAfterPenalty = calculateScore(100, 10);
 let scoreWithoutPenalty = calculateScore(100);
+
+// another additional example 
+
+function calculatePrice2(price: number, discount?: number): number{
+    return price - (discount || 0);
+}
+
+let finalPrice2 = calculatePrice2(100, 20);
+let finalPrice3 = calculatePrice2(100);
+
