@@ -79,7 +79,7 @@ someValue.myMethod();
 //challenge #05
 // create a new array of names 
 
-names = ['Alice', 'Bob', 'Eve'];
+const names: string[] = ['Alice', 'Bob', 'Eve']; // array of strings
 
 //write a function that checks if a name is in your array. this function should take a name as a paramter and return a boolean. Please leave this one for me to solve it, right now I am working on the next section.
 
@@ -89,4 +89,10 @@ function checkName(name: string): boolean{
 
 // use this function to check if various names are in your array and log the results.
 
-console.log(checkName('Alice')); // true
+let nameTOCheck = 'Alice';
+
+if (checkName(nameTOCheck)){
+    console.log(`${nameTOCheck} is in the array`);
+}else{ 
+    console.log(`${nameTOCheck} is not in the array`);
+}
