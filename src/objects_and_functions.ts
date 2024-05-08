@@ -187,8 +187,14 @@ function logMessage(message: string): void {
 // so 'Hello, TypeScript!' will be printed to the console.
 logMessage('Hello, TypeScript!');
 
-// Functions with unknown return types as function parameters
-function processInput(input: string | number){
+// The function 'processInput' demonstrates the use of union types and type guards in TypeScript.
+// It accepts a parameter 'input' that can be either a string or a number (a union type).
+// Inside the function, it uses type guards to check the type of 'input' at runtime.
+// If 'input' is a string, it converts it to uppercase and logs it to the console.
+// If 'input' is a number, it formats it with two decimal places and logs it to the console.
+// The function doesn't return anything, so its return type is 'void'.
+
+function processInput(input: string | number): void {
     if(typeof input === 'string'){
         console.log(input.toUpperCase());
     } else if (typeof input === 'number') {
