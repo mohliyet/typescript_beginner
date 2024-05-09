@@ -96,3 +96,9 @@ function printStaffDetails(staff: Union) {
         console.log(`${staff.name} is an employee in the ${staff.department} department.`);
     }
 }
+
+
+const alias: Employee = {id: 1, name: 'John Doe', department: 'Sales'};
+const steve: Employee = {id: 2, name: 'Steve', department: 'Marketing'};
+
+const bob:Manager = {id: 3, name: 'Bob', employees: [alias, steve]};
