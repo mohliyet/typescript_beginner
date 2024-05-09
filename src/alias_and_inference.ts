@@ -91,9 +91,13 @@ type Union = Employee | Manager;
 
 function printStaffDetails(staff: Union) {
     if ('employees' in staff) {
-        console.log(`${staff.name} is a manager and manages ${staff.employees.length} employees.`);
+        console.log(
+            `${staff.name} is a manager and manages ${staff.employees.length} employees.`
+        );
     } else {
-        console.log(`${staff.name} is an employee in the ${staff.department} department.`);
+        console.log(
+            `${staff.name} is an employee in the ${staff.department} department.`
+        );
     }
 }
 
@@ -102,3 +106,24 @@ const alias: Employee = {id: 1, name: 'John Doe', department: 'Sales'};
 const steve: Employee = {id: 2, name: 'Steve', department: 'Marketing'};
 
 const bob:Manager = {id: 3, name: 'Bob', employees: [alias, steve]};
+
+printStaffDetails(alias);
+printStaffDetails(bob);
+
+
+// Additional example
+
+type Book = { id: number, title: string, author: string, price: number };
+
+const book1: Book = { id: 1, title: 'The Alchemist', author: 'Paulo Coelho', price: 20.99 };
+const book2: Book = { id: 2, title: 'The Da Vinci Code', author: 'Dan Brown', price: 15.99 };
+
+const discountedBook: Book & {discount:number} = { 
+    id: 3,
+    title: 'The Alchemist',
+    price: 20.99,
+    author: 'Paul',
+    discount: 10
+};
+
+
