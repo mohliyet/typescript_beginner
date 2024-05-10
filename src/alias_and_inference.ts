@@ -127,3 +127,7 @@ const discountedBook: Book & {discount:number} = {
 };
 
 
+// Type Inference
+
+
+
