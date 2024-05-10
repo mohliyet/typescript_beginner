@@ -126,6 +126,21 @@ const discountedBook: Book & {discount:number} = {
     discount: 10
 };
 
+/**
+ * In TypeScript, both 'type alias' and 'interface' are ways to define custom types.
+ * 
+ * A 'type alias' is a way to provide a new name for a type. It can represent primitive types, union types, intersection types, etc.
+ * For example, 'Book' is a type alias for an object structure with 'id', 'title', 'author', and 'price' properties.
+ * 
+ * An 'interface' is a way to define the shape of an object. It can include properties and methods, and can be implemented by classes.
+ * For example, 'Book1' is an interface that defines a structure for a book object with 'isbn', 'title', 'author', and an optional 'genre'.
+ * 
+ * The main differences between 'type alias' and 'interface' are:
+ * - Interfaces create a new name that is used everywhere. Type aliases don’t create a new name.
+ * - Type aliases can represent primitive types, union types, intersection types, etc., while interfaces are primarily for defining object structures.
+ * - Interfaces are more extensible because they can be reopened to add new properties. Type aliases can't be changed after they're made.
+ * - Interfaces can implement and extend each other, which is not possible with type aliases.
+ */
 
 /**
  * Interface 'Book1' defines the structure for a book object.
@@ -150,18 +165,25 @@ const deepWork: Book1 = {
     genre: 'Self-help',
 }
 
-
-// methods in interfaces
+/**
+ * Interface 'Book2' defines the structure for a book object.
+ * It includes properties 'isbn', 'title', 'author', an optional 'genre', and a method 'printAuthor'.
+ * The 'isbn' property is read-only, meaning it can only be set when creating an object and cannot be modified later.
+ * The 'printAuthor' method is a function that logs the author of the book to the console.
+ */
 interface Book2{
     readonly isbn: number;
     title: string;
     author: string;
     genre?: string;
-    //method 
     printAuthor(): void;
-
+    printTitle(message: string): string;
 }
 
+/**
+ * 'deepWork1' is a constant of type 'Book2'.
+ * It is assigned an object that conforms to the 'Book2' interface, including the 'printAuthor' method.
+ */
 const deepWork1: Book2 = {
     isbn: 123456,
     title: 'Deep Work',
@@ -169,10 +191,16 @@ const deepWork1: Book2 = {
     genre: 'Self-help',
     printAuthor() {
         console.log(`Author: ${this.author}`);
+    },
+    printTitle(message){
+        return `${this.title} ${message}`
     }
 }
 
+// Call the 'printAuthor' method on the 'deepWork1' object.
 deepWork1.printAuthor();
+const result4 =deepWork1.printTitle('is an awesome book!');
 
+console.log(result4);
 
 
