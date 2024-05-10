@@ -178,6 +178,7 @@ interface Book2{
     genre?: string;
     printAuthor(): void;
     printTitle(message: string): string;
+    printSomething: (someValue: number)=>number;
 }
 
 /**
@@ -194,13 +195,29 @@ const deepWork1: Book2 = {
     },
     printTitle(message){
         return `${this.title} ${message}`
-    }
-}
+    },
+    // first option 
+
+    // printSomething: function(someValue: number){
+    //     return someValue;
+    // },
+    // second option 
+    // printSomething: (someValue) => {
+    //     console.log(this);
+    //     return someValue;
+    // }
+    // printSomething(someValue){
+    //     return someValue;
+    // }
+    
+};
 
 // Call the 'printAuthor' method on the 'deepWork1' object.
 deepWork1.printAuthor();
 const result4 =deepWork1.printTitle('is an awesome book!');
 
 console.log(result4);
+
+deepWork1.printSomething(10);
 
 
