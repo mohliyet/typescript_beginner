@@ -127,7 +127,52 @@ const discountedBook: Book & {discount:number} = {
 };
 
 
-// Type Inference
+/**
+ * Interface 'Book1' defines the structure for a book object.
+ * It includes properties 'isbn', 'title', 'author', and an optional 'genre'.
+ * The 'isbn' property is read-only, meaning it can only be set when creating an object and cannot be modified later.
+ */
+interface Book1{
+    readonly isbn: number;
+    title: string;
+    author: string;
+    genre?: string;
+}
+
+/**
+ * 'deepWork' is a constant of type 'Book1'.
+ * It is assigned an object that conforms to the 'Book1' interface.
+ */
+const deepWork: Book1 = {
+    isbn: 123456,
+    title: 'Deep Work',
+    author: 'Cal Newport',
+    genre: 'Self-help',
+}
+
+
+// methods in interfaces
+interface Book2{
+    readonly isbn: number;
+    title: string;
+    author: string;
+    genre?: string;
+    //method 
+    printAuthor(): void;
+
+}
+
+const deepWork1: Book2 = {
+    isbn: 123456,
+    title: 'Deep Work',
+    author: 'Cal Newport',
+    genre: 'Self-help',
+    printAuthor() {
+        console.log(`Author: ${this.author}`);
+    }
+}
+
+deepWork1.printAuthor();
 
 
 
