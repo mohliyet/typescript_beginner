@@ -206,9 +206,9 @@ const deepWork1: Book2 = {
     //     console.log(this);
     //     return someValue;
     // }
-    // printSomething(someValue){
-    //     return someValue;
-    // }
+    printSomething(someValue){
+        return someValue;
+    }
     
 };
 
@@ -252,14 +252,14 @@ interface Computer{
     upgradeRam(newRam: number): number;
 }
 
-const computer1: Computer = {
+const laptop1: Computer = {
     id: 1,
     brand: 'Dell',
     ram: 8,
     storage: 512,
     upgradeRam(newRam: number){
         return this.ram + newRam;
-    }
-}
+    },
+};
 
-console.log(computer1.upgradeRam(8));
+console.log(laptop1.upgradeRam(8));
