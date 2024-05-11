@@ -242,16 +242,23 @@ interface. this object should have all the properties and defined in the interfa
 (except for optional ones, which are ... optional), and the methods should be implemented.
 
 */
-
+/**
+ * Interface 'Computer' defines the structure for a computer object.
+ * It includes properties 'id', 'brand', 'ram', and an optional 'storage'.
+ * It also includes a method 'upgradeRam' that takes a number as an argument and returns a number.
+ */
 interface Computer{
     id: number;
     brand: string;
     ram: number;
     storage?: number;
-
     upgradeRam(newRam: number): number;
 }
 
+/**
+ * 'laptop1' is a constant of type 'Computer'.
+ * It is assigned an object that conforms to the 'Computer' interface, including the 'upgradeRam' method.
+ */
 const laptop1: Computer = {
     id: 1,
     brand: 'Dell',
@@ -263,3 +270,70 @@ const laptop1: Computer = {
 };
 
 console.log(laptop1.upgradeRam(8));
+
+// Type guards in TypeScript
+
+/**
+ * Interface 'Person' defines the structure for a person object.
+ * It includes properties 'name' and 'age', and a method 'getDetails' that returns a string.
+ */
+interface Person {
+    name: string;
+    age: number;
+    getDetails(): string;
+}
+
+/**
+ * 'person0' is a constant of type 'Person'.
+ * It is assigned an object that conforms to the 'Person' interface, including the 'getDetails' method.
+ */
+const person0: Person = {
+    name: 'Alice',
+    age: 30,
+    getDetails() {
+        return `Person: ${this.name}, Age: ${this.age}`;
+    }
+};
+
+/**
+ * Interface 'Employee' extends 'Person' and adds an 'employeeId' property.
+ */
+interface Employeee extends Person {
+    employeeId: number;
+}
+
+/**
+ * 'employee' is a constant of type 'Employee'.
+ * It is assigned an object that conforms to the 'Employee' interface, including the 'getDetails' method.
+ */
+const employee: Employeee = {
+    name: 'Bob',
+    age: 40,
+    employeeId: 123,
+    getDetails() {
+        return `Employee: ${this.name}, Age: ${this.age}, Employee ID: ${this.employeeId}`;
+    },
+};
+
+console.log(employee.getDetails());
+
+interface Maanager extends Person, DogOwner{
+    managePeople(): void;
+}
+
+const maanager: Maanager = {
+    name: 'Charlie',
+    age: 50,
+    dogName: 'Buddy',
+    managePeople() {
+        console.log(`${this.name} manages people.`);
+    },
+   getDetails() {
+         return `Manager: ${this.name}, Age: ${this.age}`;
+   },
+    getDogDetails(){
+        return `Name: ${this.name},`;
+    }
+};
+
+maanager.managePeople();
