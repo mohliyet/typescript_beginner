@@ -221,5 +221,45 @@ console.log(result4);
 deepWork1.printSomething(10);
 
 
+// challenge #08
 
+/* 
+- start with defining an interface Computer using interface keyword. 
+this will serve as a blueprint for objects that will be of this type.
 
+- Inside the interface, define the properties that the object should have.
+In this case, we have id, brand, ram and storage.
+
+-use the ? after storage property to indicate that this property is optional 
+and may not exist on all objects of this type.
+
+- also inside the interface, define any methods that the object should have. 
+In this case, we have upgradeRam, which is a function that takes a number 
+and returns a number
+
+- now that we have our interface, we can create an object that adheres to this
+interface. this object should have all the properties and defined in the interface
+(except for optional ones, which are ... optional), and the methods should be implemented.
+
+*/
+
+interface Computer{
+    id: number;
+    brand: string;
+    ram: number;
+    storage?: number;
+
+    upgradeRam(newRam: number): number;
+}
+
+const computer1: Computer = {
+    id: 1,
+    brand: 'Dell',
+    ram: 8,
+    storage: 512,
+    upgradeRam(newRam: number){
+        return this.ram + newRam;
+    }
+}
+
+console.log(computer1.upgradeRam(8));
