@@ -337,3 +337,57 @@ const maanager: Maanager = {
 };
 
 maanager.managePeople();
+
+// challenge #09
+
+/*
+ - Define the person interface Start by defining a person interface with 
+ a name property of type string.
+ - Define the DogOwner interface  Next, define a DogOwner interface 
+ that extends Person and adds a dogName property of type string.
+ - Define the Manager interface Then, define a Manager interface that extends Person 
+ and adds two methods: managePeople and delegateTasks. Both methods should 
+ have a return type of void.
+ - Define the getEmployee function Now, define a function called getEmployee that
+ returns a Person, DogOwner, or Manager. Inside this function, generate a random 
+ number and use it to decide which type of object to return If the number is less
+ than 0.33, return a Person. If it's less than 0.66, return a DogOwner.
+ Otherwise, return a Manager.
+*/
+
+
+interface Person {
+    name: string;
+}
+
+interface DogOwner extends Person {
+    dogName: string;
+}
+
+interface Maanager extends Person {
+    managePeople(): void;
+    delegateTasks(): void;
+}
+
+const employeee: Person | DogOwner | Maanager = getEmployee();
+
+function getEmployee(): Person | DogOwner | Maanager {
+    const random = Math.random();
+    if (random < 0.33) {
+        return { name: 'Alice' };
+    } else if (random < 0.66) {
+        return { name: 'Bob', dogName: 'Rover' };
+    } else {
+        return {
+            name: 'Charlie',
+            managePeople() {
+                console.log('Managing people...');
+            },
+            delegateTasks() {
+                console.log('Delegating tasks...');
+            }
+        };
+    }
+}
+
+console.log(employeee);
