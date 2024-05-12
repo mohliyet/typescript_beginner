@@ -353,6 +353,7 @@ maanager.managePeople();
  number and use it to decide which type of object to return If the number is less
  than 0.33, return a Person. If it's less than 0.66, return a DogOwner.
  Otherwise, return a Manager.
+ - Finally, 
 */
 
 
@@ -391,3 +392,10 @@ function getEmployee(): Person | DogOwner | Maanager {
 }
 
 console.log(employeee);
+
+function isManager(obj: Person | DogOwner | Manager): obj is Manager{
+    return 'managePeople' in obj;
+}
+if (isManager(employeee)){
+    employeee.delegateTasks();
+};
