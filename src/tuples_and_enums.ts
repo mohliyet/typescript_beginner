@@ -106,3 +106,26 @@ let c: Color = Color.Green; // 1
  *    }
  *    let directions = [Directions.Up, Directions.Down, Directions.Left, Directions.Right];
  */
+
+//example of enum
+
+enum serverResposeStatus{
+    Success,
+    Error,
+}
+
+interface serverResponse{
+    result: serverResposeStatus;
+    data: string[];
+}
+
+function getServerResponse(): serverResponse{
+    return {
+        result: serverResposeStatus.Success,
+        data: ['first item', 'second item'],
+    };
+}
+
+const response: serverResponse = getServerResponse();
+
+console.log(response.result); // 0 (Success)
