@@ -5,6 +5,7 @@ import { setupCounter } from './counter.ts'
 import './tutorial.ts';
 import './objects_and_functions.ts';
 import './alias_and_inference.ts'
+import './tuples_and_enums.ts'
 
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
   <div>
