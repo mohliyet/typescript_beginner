@@ -42,6 +42,15 @@ console.log(bird.name); // { name: 'sparrow' }
 console.log(dog.name); // { name: 'Poodle' }
 
 
+enum Status {
+    Pending = 'PENDING',
+    Decline = 'DECLINE',
+}
 
+type User = {
+    name: string;
+    status: Status;
+};
 
-
+const statusValue = 'PENDING';
+const user:User = {name: 'John Doe', status: statusValue as Status}
