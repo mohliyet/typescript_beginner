@@ -6,6 +6,8 @@ import './tutorial.ts';
 import './objects_and_functions.ts';
 import './alias_and_inference.ts'
 import './tuples_and_enums.ts'
+import './type_unknown.ts'
+import './type_assertion.ts'
 
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
   <div>

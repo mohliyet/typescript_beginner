@@ -11,10 +11,23 @@ if(typeof unknownValue === 'string') {
     console.log(unknownValue.toUpperCase());
 }
 
+
+function runSomeCode(){
+    const random = Math.random()
+    if(random < 0.5){
+        throw new Error('There was an error...')
+    }else {
+        throw 'some error';
+    }
+}
+
 try {
-    throw 'string'
-    throw new Error('There was error...')
+    runSomeCode();
     
 } catch (error) {
-    console.log(error.message);
+    if(error instanceof Error){
+        console.log('Error:', error.message)
+    }else {
+        console.log('Error:', error)
+    }
 }
