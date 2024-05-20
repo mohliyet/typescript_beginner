@@ -12,7 +12,7 @@
  * 3. Convenience: It's helpful when you're not sure what value will be 
  *    assigned to a variable, or if the value will be of multiple types.
  *
- * Cons:
+ * Consc
  * 1. Loss of Type Safety: Using `any` bypasses type checking, one of 
  *    TypeScript's core features. This means that errors that could be caught 
  *    at compile time will instead occur at runtime.
@@ -28,3 +28,18 @@
  * use TypeScript's other types, like `unknown` or type assertions, to handle 
  * these situations.
  */
+
+// Declare a variable of type `any`
+let variable: any;
+
+// Assign a number to the variable and log its type
+variable = 10;
+console.log(typeof variable); // Output: "number"
+
+// Assign a string to the variable and log its type
+variable = "Hello";
+console.log(typeof variable); // Output: "string"
+
+// Assign a boolean to the variable and log its type
+variable = true;
+console.log(typeof variable); // Output: "boolean"
